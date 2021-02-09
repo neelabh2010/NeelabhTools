@@ -48,5 +48,21 @@ public static class ExtraTools
 
         return list;
     }
-   
+
+    /// <summary>
+    /// Convert JSON string to dynamic type.
+    /// <para>How to read result? Below is the code: </para>
+    /// <para>var result = jsonString.DynamicJSON()</para>
+    /// <para>string status = Convert.ToString(result.status);</para>
+    /// <para>string data = Convert.ToString(result.data);</para>
+    /// <para>Here "result.status" and "result.data" are assumed as json string parameters</para>
+    /// </summary>
+    /// <param name="jsonString"></param>
+    /// <returns></returns>
+    public static dynamic DynamicJSON(this string jsonString)
+    {
+        dynamic result = JsonConvert.DeserializeObject<dynamic>(jsonString);
+        return result;
+    }
+
 }

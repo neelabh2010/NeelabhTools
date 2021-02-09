@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Description>C# MVC tools</Description>
-    <Copyright />
+    <Copyright>Neelabh Srivastava | 2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
     <PackageIcon>neelabh.png</PackageIcon>
