@@ -6,6 +6,12 @@ public static class ObjectTools
     {
         return bool.Parse(target.ToString().ToLower());
     }
+
+    public static short ToShort(this object target)
+    {
+        return short.Parse(target.ToString());
+    }
+
     public static int ToInt(this object target)
     {
         return int.Parse(target.ToString());
@@ -16,14 +22,19 @@ public static class ObjectTools
         return long.Parse(target.ToString());
     }
 
-    public static decimal ToDecimal(this object target)
+    public static float ToFloat(this object target)
     {
-        return decimal.Parse(target.ToString());
+        return float.Parse(target.ToString());
     }
 
     public static double ToDouble(this object target)
     {
         return double.Parse(target.ToString());
+    }
+
+    public static decimal ToDecimal(this object target)
+    {
+        return decimal.Parse(target.ToString());
     }
 
     // convert string to enum target --

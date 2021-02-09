@@ -33,14 +33,11 @@ namespace NeelabhMVCTools.CacheServices
         ///<summary>Use it to retrive the current DataCache reference.</summary>
         public T GetDataCache(bool LocalCacheOnly = false)
         {
-            //if (IsCacheLoading) return TempDataCache;
-
             if (!LocalCacheOnly && (DataCache == null || IsCacheClean))
             {
-                //IsCacheLoading = true;
+                IsCacheLoading = true;
                 LoadRepository();
-                //TempDataCache = default;
-                //IsCacheLoading = false;
+                IsCacheLoading = false;
 
                 // If _datalist is still null (due to internet is disconnected)
                 if (DataCache == null) throw new Exception("Unable to load data from server.");
