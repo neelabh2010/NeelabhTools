@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Description>C# MVC tools</Description>
+    <Copyright />
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
+    <PackageIcon>neelabh.png</PackageIcon>
+    <RepositoryUrl>https://github.com/neelabh2010/NeelabhTools</RepositoryUrl>
+    <PackageTags>MVC Tools, Encryption, Cache, Email, Session, DropDown</PackageTags>
+    <Authors>Neelabh Srivastava</Authors>
+    <Product>Neelabh MVC Tools</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -15,6 +24,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NeelabhCoreTools\NeelabhCoreTools.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\user\OneDrive\Desktop\neelabh.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
