@@ -9,16 +9,16 @@ namespace NeelabhMVCTools.CipherServices
     {
         private readonly IDataProtectionProvider _dataProtectionProvider;
 
-        private string EncryptionKey;
-        private int UserKeyTimeOut;
+        public string EncryptionKey;
+        public int UserKeyTimeOut;
 
         public CipherService(IDataProtectionProvider dataProtectionProvider)
         {
             _dataProtectionProvider = dataProtectionProvider;
-            SetCipherSettings();
+            SetSettings();
         }
 
-        private void SetCipherSettings()
+        private void SetSettings()
         {
             try
             {
@@ -26,8 +26,8 @@ namespace NeelabhMVCTools.CipherServices
                 builder.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json"));
                 var root = builder.Build();
 
-                EncryptionKey = root.GetSection("CipherSettings").GetSection("EncryptionKey").Value;
-                UserKeyTimeOut = root.GetSection("CipherSettings").GetSection("UserKeyTimeout").Value.ToInt();
+                EncryptionKey = root.GetSection("NT_CipherSettings").GetSection("EncryptionKey").Value;
+                UserKeyTimeOut = root.GetSection("NT_CipherSettings").GetSection("UserKeyTimeout").Value.ToInt();
             }
             catch
             {
