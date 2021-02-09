@@ -84,9 +84,30 @@ public static class ObjectTools
     {
         return target == null || Convert.IsDBNull(target);
     }
+
+    public static string IsNull(this object target, string trueValue)
+    {
+        return target.IsNull() ? trueValue : target.ToString();
+    }
+
     public static string IsNull(this object target, string trueValue, string falseValue)
     {
         return target.IsNull() ? trueValue : falseValue;
+    }
+
+    public static bool IsNotNull(this object target)
+    {
+        return target != null || !Convert.IsDBNull(target);
+    }
+
+    public static string IsNotNull(this object target, string trueValue)
+    {
+        return target.IsNotNull() ? trueValue : target.ToString();
+    }
+
+    public static string IsNotNull(this object target, string trueValue, string falseValue)
+    {
+        return target.IsNotNull() ? trueValue : falseValue;
     }
 
     public static bool IsEqual(this object target, string compareWith)
