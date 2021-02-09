@@ -31,6 +31,11 @@ public static class DateTools
         return new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month));
     }
 
+    public static bool HasExpired(this DateTime date)
+    {
+        return date < CurrentDateTime();
+    }
+
     public static string RelativeTime(this DateTime date)
     {
         const int SECOND = 1;
