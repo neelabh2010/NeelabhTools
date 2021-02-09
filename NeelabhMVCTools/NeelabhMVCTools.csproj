@@ -11,6 +11,7 @@
     <PackageTags>MVC Tools, Encryption, Cache, Email, Session, DropDown</PackageTags>
     <Authors>Neelabh Srivastava</Authors>
     <Product>Neelabh MVC Tools</Product>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
