@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeelabhCoreTools", "NeelabhCoreTools\NeelabhCoreTools.csproj", "{DBE79A27-C873-49DE-9645-4F5203F9ED03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeelabhCoreTools", "NeelabhCoreTools\NeelabhCoreTools.csproj", "{DBE79A27-C873-49DE-9645-4F5203F9ED03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeelabhMVCTools", "NeelabhMVCTools\NeelabhMVCTools.csproj", "{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{DBE79A27-C873-49DE-9645-4F5203F9ED03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBE79A27-C873-49DE-9645-4F5203F9ED03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBE79A27-C873-49DE-9645-4F5203F9ED03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

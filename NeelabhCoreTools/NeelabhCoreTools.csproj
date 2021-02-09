@@ -3,17 +3,28 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Neelabh Srivastava</Authors>
-    <Description>Good learning material, to know how to develop class libraries.</Description>
+    <Description>C# Library</Description>
     <Copyright>Neelabh Srivastava | 2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageTags>class library, db tools, date tools, string tools, object tools, asp.net core class library</PackageTags>
-    <PackageIcon>avatar.png</PackageIcon>
+    <PackageTags>c# class library, neelabh tools, neelabh, neelabh core tools, db tools, string tools, size set, duration set, date tools</PackageTags>
+    <PackageIcon>neelabh.png</PackageIcon>
+    <ApplicationIcon>neelabhico.ico</ApplicationIcon>
+    <Product>Neelabh Tools</Product>
+    <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/neelabh2010/NeelabhTools</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="2.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.2" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\user\OneDrive\Desktop\neelabh.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
