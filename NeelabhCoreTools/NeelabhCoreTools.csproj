@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <Authors>Neelabh Srivastava</Authors>
-    <Description>C# Library</Description>
+    <Description>C# Library &amp; Tools</Description>
     <Copyright>Neelabh Srivastava | 2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>c# class library, neelabh tools, neelabh, neelabh core tools, db tools, string tools, size set, duration set, date tools</PackageTags>
@@ -12,7 +12,7 @@
     <Product>Neelabh Tools</Product>
     <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
     <RepositoryUrl>https://github.com/neelabh2010/NeelabhTools</RepositoryUrl>
-    <Version>1.0.3</Version>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <Description>C# MVC tools</Description>
+    <Description>C# MVC Purpose Library &amp; Tools</Description>
     <Copyright>Neelabh Srivastava | 2021</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
@@ -11,7 +11,7 @@
     <PackageTags>MVC Tools, Encryption, Cache, Email, Session, DropDown</PackageTags>
     <Authors>Neelabh Srivastava</Authors>
     <Product>Neelabh MVC Tools</Product>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
