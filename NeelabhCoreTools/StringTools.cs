@@ -74,6 +74,7 @@ public static class StringTools
 
         return result;
     }
+
     public static string TrimEnd(this string target, string trimString = " ")
     {
         if (string.IsNullOrEmpty(trimString)) return target;
@@ -86,6 +87,7 @@ public static class StringTools
 
         return result;
     }
+
     public static string[] Split(this string target, string splitBy = "##", StringSplitOptions splitOption = StringSplitOptions.RemoveEmptyEntries)
     {
         return target.Split(new string[] { splitBy }, splitOption);
