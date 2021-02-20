@@ -99,6 +99,11 @@ public static class StringTools
         return textInfo.ToTitleCase(target);
     }
 
+    public static string ConcatIf(this string target, bool whenTrue, string addString)
+    {
+        return whenTrue ? target += addString : target;
+    }
+
     public static string ConcatIf(this string target, string compareWith, string addString)
     {
         return target == compareWith ? target += addString : target;

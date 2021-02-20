@@ -30,22 +30,26 @@ public class ResultInfo
         }
     }
 
-    public void SetSuccess(string message)
+    public ResultInfo SetSuccess(string message)
     {
         HasError = false;
         Title = "Success";
         SystemMessage = Message;
         this.Message = message;
         ErrorNo = 0;
+
+        return this;
     }
 
-    public void SetError(string message, int errorNo = 0, bool handyError = false)
+    public ResultInfo SetError(string message, int errorNo = 0, bool handyError = false)
     {
         HasError = true;
         Title = "Error";
         SystemMessage = message;
         this.Message = handyError ? HandyErrorMsg(errorNo, message) : message;
         this.ErrorNo = errorNo;
+
+        return this;
     }
 
     public string GetSystemMessage()

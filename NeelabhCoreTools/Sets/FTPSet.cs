@@ -7,10 +7,13 @@ namespace NeelabhCoreTools.Sets
     [Owned]
     public class FTPSet
     {
+        /// <summary>
+        /// e.g. ftp://ftpserver.com
+        /// </summary>
         [Column(TypeName = "varchar(50)")]
-        public string Host { get; set; }
+        public string Host { get; set; }    
 
-        public int Port { get; set; }
+        //public int? Port { get; set; }
 
         [Column(TypeName = "varchar(50)")]
         public string User { get; set; }
