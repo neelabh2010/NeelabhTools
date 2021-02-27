@@ -72,7 +72,7 @@ namespace NeelabhMVCTools.CipherServices
 
         public string UserTransKey()
         {
-            return DateTools.GetDateTime("dd-MMM-yyyy HH:mm:ss:fff");
+            return DateTools.GetDateTime("ddMMMyyyy HH:mm:ss");
         }
 
     }
