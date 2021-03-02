@@ -8,6 +8,7 @@ namespace NeelabhCoreTools.Sets
     {
         public static readonly string NONE = string.Empty;
         public static readonly string UNLIMITED = "Unlimited";
+        public static readonly string HOUR = "Hour";
         public static readonly string DAY = "Day";
         public static readonly string MONTH = "Month";
         public static readonly string YEAR = "Year";
@@ -33,6 +34,10 @@ namespace NeelabhCoreTools.Sets
                     case "UNLIMITED":
                         Length = 0;
                         _period = UNLIMITED;
+                        break;
+                    case "HOUR":
+                    case "HOURS":
+                        _period = HOUR;
                         break;
                     case "DAY":
                     case "DAYS":
