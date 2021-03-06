@@ -12,7 +12,7 @@
     <Product>Neelabh Tools</Product>
     <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
     <RepositoryUrl>https://github.com/neelabh2010/NeelabhTools</RepositoryUrl>
-    <Version>1.0.7</Version>
+    <Version>1.0.8</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="C:\Users\user\OneDrive\Desktop\neelabh.png">
+    <None Include="neelabh.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>

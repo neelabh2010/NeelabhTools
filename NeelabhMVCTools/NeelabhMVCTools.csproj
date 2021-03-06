@@ -12,6 +12,7 @@
     <Authors>Neelabh Srivastava</Authors>
     <Product>Neelabh MVC Tools</Product>
     <Version>1.0.3</Version>
+    <ApplicationIcon>neelabhico.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -28,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="C:\Users\user\OneDrive\Desktop\neelabh.png">
+    <None Include="..\NeelabhCoreTools\neelabh.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
