@@ -55,6 +55,11 @@ public static class StringTools
         return !(value == null || value == string.Empty);
     }
 
+    public static int CountOccurrance(this string target, string searchString)
+    {
+        return Regex.Matches(target, searchString).Count;
+    }
+
     public static string ReplaceOccurrance(this string target, string replaceTo, string replaceWith, int occurrance = 1)
     {
         var regex = new Regex(Regex.Escape(replaceTo));
