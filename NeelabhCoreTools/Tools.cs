@@ -64,7 +64,7 @@ namespace NeelabhCoreTools
 
             if (upperChars > 0)
             {
-                sb.Append(RandomUpperCase(lowerChars));
+                sb.Append(RandomUpperString(lowerChars));
             }
 
             return sb.ToString().Shuffle();
