@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using System.Globalization;
+using System.Text.RegularExpressions;
 
 public static class StringTools
 {
@@ -27,6 +27,11 @@ public static class StringTools
     public static bool IsBool(this string value)
     {
         return bool.TryParse(value, out _);
+    }
+
+    public static bool IsDate(this string value)
+    {
+        return DateTime.TryParse(value, out _);
     }
 
     public static bool IsValidEmail(this string email)
@@ -135,5 +140,21 @@ public static class StringTools
     public static string FormatDate(this string target, string format = "dd-MMM-yyyy")
     {
         return DateTime.Parse(target).ToString(format);
+    }
+
+    public static string Shuffle(this string target)
+    {
+        char[] array = target.ToCharArray();
+        Random rng = new Random();
+        int n = array.Length;
+        while (n > 1)
+        {
+            n--;
+            int k = rng.Next(n + 1);
+            var value = array[k];
+            array[k] = array[n];
+            array[n] = value;
+        }
+        return new string(array);
     }
 }

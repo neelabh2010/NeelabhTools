@@ -4,6 +4,6 @@
     {
         string Encrypt(string input, string userTransKey = "");
         string Decrypt(string cipherText, string userTransKey = "");
-        public string UserTransKey();
+        public string UserTransKey(bool IsDateType = false);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.DataProtection;
 using Microsoft.Extensions.Configuration;
+using NeelabhCoreTools;
 using System;
 using System.IO;
 
@@ -45,17 +46,22 @@ namespace NeelabhMVCTools.CipherServices
 
         public string Decrypt(string cipherText, string userTransEncKey = "")
         {
-            string userTransKey = "";
+            string userTransKey = userTransEncKey ?? "";
 
-            if (userTransEncKey != "")
+            if (userTransEncKey != string.Empty)
             {
                 userTransKey = Decrypt(userTransEncKey);
-                bool isSuccess = DateTime.TryParse(userTransKey, out DateTime key_dt);
 
-                if (!isSuccess)
-                    throw new CipherException("Invalid user key provided.");
-                else if (DateTools.CurrentDateTime() > key_dt.AddMinutes(UserKeyTimeOut))
-                    throw new CipherException("User key has been expired. Reload the page and try again.");
+                // if user trans key is a date the check it's expiry --
+                if(userTransKey.IsDate())
+                {
+                    bool isSuccess = DateTime.TryParse(userTransKey, out DateTime key_dt);
+
+                    if (!isSuccess)
+                        throw new CipherException("Invalid user key provided.");
+                    else if (DateTools.CurrentDateTime() > key_dt.AddMinutes(UserKeyTimeOut))
+                        throw new CipherException("User key has been expired. Reload the page and try again.");
+                }
             }
 
             try
@@ -70,9 +76,12 @@ namespace NeelabhMVCTools.CipherServices
             }
         }
 
-        public string UserTransKey()
+        public string UserTransKey(bool IsDateType = false)
         {
-            return DateTools.GetDateTime("ddMMMyyyy HH:mm:ss");
+            if (IsDateType)
+                return DateTools.GetDateTime("ddMMMyyyy HH:mm:ss");
+            else
+                return Tools.RandomString(4, 4, 4, "@#$&*^+=");
         }
 
     }

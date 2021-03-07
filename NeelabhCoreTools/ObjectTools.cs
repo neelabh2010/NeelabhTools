@@ -48,18 +48,22 @@ public static class ObjectTools
     {
         return target.IsNull() ? null : (bool?)bool.Parse(target.ToString());
     }
+
     public static int? ToNInt(this object target) // nullable int
     {
         return target.IsNull() ? null :(int?) int.Parse(target.ToString());
     }
+
     public static long? ToNLong(this object target) // nullable long
     {
         return target.IsNull() ? null : (long?)long.Parse(target.ToString());
     }
+
     public static decimal? ToNDecimal(this object target) // nullable decimal
     {
         return target.IsNull() ? null : (decimal?)decimal.Parse(target.ToString());
     }
+
     public static double? ToNDouble(this object target) // nullable double
     {
         return target.IsNull() ? null : (double?)double.Parse(target.ToString());
