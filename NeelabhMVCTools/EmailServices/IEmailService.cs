@@ -1,4 +1,4 @@
-﻿namespace AppServices.EmailServices
+﻿namespace NeelabhMVCTools.EmailServices
 {
     public interface IEmailService
     {

@@ -4,7 +4,7 @@ using System.IO;
 using System.Net;
 using System.Net.Mail;
 
-namespace AppServices.EmailServices
+namespace NeelabhMVCTools.EmailServices
 {
     public class EmailService : IEmailService
     {
@@ -48,7 +48,8 @@ namespace AppServices.EmailServices
 
             try
             {
-                MailMessage mailMessage = new MailMessage {
+                MailMessage mailMessage = new MailMessage
+                {
                     From = new MailAddress(SenderEmail, SenderName),
                 };
 
@@ -68,7 +69,7 @@ namespace AppServices.EmailServices
                 result.HasError = false;
                 result.Message = "Mail sent successfully";
             }
-            catch(Exception ex) 
+            catch (Exception ex)
             {
                 result.HasError = true;
                 result.Message = ex.Message;
