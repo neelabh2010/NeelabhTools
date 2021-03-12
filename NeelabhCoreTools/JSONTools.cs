@@ -25,12 +25,12 @@ namespace NeelabhCoreTools
             return result;
         }
 
-        public static T JsonDeserializer<T>(this string jsonString)
+        public static T JsonToClass<T>(this string jsonString)
         {
             return JsonConvert.DeserializeObject<T>(jsonString);
         }
 
-        public static string JsonSerializer<T>(this T classObject)
+        public static string ClassToJson<T>(this T classObject)
         {
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
             MemoryStream ms = new MemoryStream();
