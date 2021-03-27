@@ -34,7 +34,7 @@ namespace NeelabhCoreTools
         {
             DataContractJsonSerializer ser = new DataContractJsonSerializer(typeof(T));
             MemoryStream ms = new MemoryStream();
-            ser.WriteObject(ms, classObject);
+            ser.WriteObject(ms, classObject); 
             string jsonString = Encoding.UTF8.GetString(ms.ToArray());
             ms.Close();
             return jsonString;

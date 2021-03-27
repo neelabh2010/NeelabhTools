@@ -74,6 +74,7 @@ public static class ObjectTools
     {
         return DateTime.Parse(target.ToString());
     }
+
     public static DateTime? ToNDate(this object target) // nullable DateTime
     {
         return target.IsNull() ? null : (DateTime?)DateTime.Parse(target.ToString());

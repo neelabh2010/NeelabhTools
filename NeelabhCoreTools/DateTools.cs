@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Globalization;
+
 public static class DateTools
 {
     public static DateTime CurrentDateTime()
@@ -8,17 +10,17 @@ public static class DateTools
 
     public static string GetDate(string format = "dd-MMM-yyyy")
     {
-        return DateTime.Now.ToString(format);
+        return DateTime.Now.ToString(format, CultureInfo.InvariantCulture);
     }
 
     public static string GetDateTime(string format = "dd-MMM-yyyy hh:mm:ss tt")
     {
-        return DateTime.Now.ToString(format);
+        return DateTime.Now.ToString(format, CultureInfo.InvariantCulture);
     }
 
     public static string FormatDate(this DateTime date, string format = "dd-MMM-yyyy")
     {
-        return date.ToString(format);
+        return date.ToString(format, CultureInfo.InvariantCulture);
     }
 
     public static DateTime FirstDateOfMonth(this DateTime date)

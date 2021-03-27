@@ -3,18 +3,23 @@ using System.Data;
 
 public class ResultInfo
 {
-    public bool HasError { get; set; }  = false;
+    // Result Summary --
     public string Title { get; set; } = "Success";
     public string Message { get; set; } = "";
-    public string SystemMessage { get; set; } = "";
-    public int ErrorNo { get; set; } = 0;
-    public DbExceptions ErrorType { get; set; } = DbExceptions.None;
-    public bool IsDBError { get; set; } = false;
+
+    // Result Data --
     public string Result { get; set; } = "";
     public string AdditionalInfo { get; set; } = "";
     public List<string> AdditionalItems { get; set; }
     public DataTable Table { get; set; }
     public object Object { get; set; }
+
+    // Error Related --
+    public bool HasError { get; set; }  = false;
+    public int ErrorNo { get; set; } = 0;
+    public bool IsDBError { get; set; } = false;
+    public string SystemMessage { get; set; } = "";
+    public DbExceptions ErrorType { get; set; } = DbExceptions.None;
 
     /// <summary>
     /// Set error message to the ResultInfo object, and HasError = true through it
