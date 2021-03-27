@@ -12,7 +12,7 @@
     <Product>Neelabh Tools</Product>
     <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
     <RepositoryUrl>https://github.com/neelabh2010/NeelabhTools</RepositoryUrl>
-    <Version>1.0.12</Version>
+    <Version>1.0.13</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 

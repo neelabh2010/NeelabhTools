@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 public static class ObjectTools
 {
@@ -73,6 +74,11 @@ public static class ObjectTools
     public static DateTime ToDate(this object target)
     {
         return DateTime.Parse(target.ToString());
+    }
+
+    public static DateTime ToDateExact(this object target, string format = "dd/MM/yyyy")
+    {
+        return DateTime.ParseExact(target.ToString(), format, CultureInfo.InvariantCulture);
     }
 
     public static DateTime? ToNDate(this object target) // nullable DateTime
