@@ -35,7 +35,7 @@ public static class DateTools
 
     public static bool HasExpired(this DateTime date)
     {
-        return date < CurrentDateTime();
+        return date > CurrentDateTime();
     }
 
     public static string RelativeTime(this DateTime date)
