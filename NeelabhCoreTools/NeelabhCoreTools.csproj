@@ -12,8 +12,12 @@
     <Product>Neelabh Tools</Product>
     <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
     <RepositoryUrl>https://github.com/neelabh2010/NeelabhTools</RepositoryUrl>
-    <Version>1.0.14</Version>
+    <Version>1.0.15</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningLevel>5</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>

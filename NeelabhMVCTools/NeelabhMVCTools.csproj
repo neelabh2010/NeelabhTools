@@ -11,7 +11,7 @@
     <PackageTags>MVC Tools, Encryption, Cache, Email, Session, DropDown</PackageTags>
     <Authors>Neelabh Srivastava</Authors>
     <Product>Neelabh MVC Tools</Product>
-    <Version>1.0.5</Version>
+    <Version>1.0.6</Version>
     <ApplicationIcon>neelabhico.ico</ApplicationIcon>
   </PropertyGroup>
 
@@ -25,14 +25,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\NeelabhCoreTools\NeelabhCoreTools.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="..\NeelabhCoreTools\neelabh.png">
       <Pack>True</Pack>
       <PackagePath></PackagePath>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NeelabhCoreTools\NeelabhCoreTools.csproj" />
   </ItemGroup>
 
 </Project>

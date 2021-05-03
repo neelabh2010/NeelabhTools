@@ -1,10 +1,17 @@
 ﻿using System;
+using System.Linq;
 using System.Text;
 
 namespace NeelabhCoreTools
 {
     public class Tools
     {
+        // New GUID --
+        public static string NewGuid()
+        {
+            return Guid.NewGuid().ToString();
+        }
+
         // Random values generation --
         public static int RandomDigit()
         {
@@ -18,26 +25,18 @@ namespace NeelabhCoreTools
 
         public static string RandomLowerString(int size)
         {
-            var sb = new StringBuilder();
-
-            for (int i = 1; i <= size; i++)
-            {
-                sb.Append(RandomNumber('a', 'z'));
-            }
-
-            return sb.ToString();
+            var random = new Random();
+            const string chars = "abcdefghijklmnopqrstuvwxyz";
+            return new string(Enumerable.Repeat(chars, size)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         public static string RandomUpperString(int size)
         {
-            var sb = new StringBuilder();
-
-            for (int i = 1; i <= size; i++)
-            {
-                sb.Append(RandomNumber('A', 'Z'));
-            }
-
-            return sb.ToString();
+            var random = new Random();
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            return new string(Enumerable.Repeat(chars, size)
+                .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
         public static string RandomString(int digits = 2, int lowerChars = 3, int upperChars = 3, string specialChars = null)
@@ -64,10 +63,11 @@ namespace NeelabhCoreTools
 
             if (upperChars > 0)
             {
-                sb.Append(RandomUpperString(lowerChars));
+                sb.Append(RandomUpperString(upperChars));
             }
 
             return sb.ToString().Shuffle();
         }
+
     }
 }

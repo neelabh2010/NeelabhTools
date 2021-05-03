@@ -17,9 +17,8 @@ namespace NeelabhMVCTools.MVCServices
             {
                 try
                 {
-                    object temp = viewModel;
-                    IModelErrorIntegration modelErrorIntegration = (IModelErrorIntegration)temp;
-                    modelErrors = modelErrorIntegration.ModelErrors();
+                    var mei = (IModelErrorIntegration)viewModel;
+                    modelErrors = mei.ModelErrors();
                 }
                 catch
                 {
