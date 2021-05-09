@@ -70,7 +70,7 @@ namespace NeelabhMVCTools.CipherServices
                 var protector = _dataProtectionProvider.CreateProtector(key);
                 return protector.Unprotect(cipherText);
             }
-            catch
+            catch(Exception ex)
             {
                 throw new CipherException("Unable to resolve the cipher service.");
             }

@@ -66,7 +66,10 @@ namespace NeelabhCoreTools.SqlClient
 
         public string SQLAction
         {
-            set { SetParameter("@sql_action", value); }
+            set
+            {
+                DbCommand.Parameters.AddWithValue("sql_action", value);
+            }
         }
 
         public List<DbParam> Parameters
@@ -81,19 +84,9 @@ namespace NeelabhCoreTools.SqlClient
             }
         }
 
-        public void SetParameter(string parameterName, object value)
-        {
-            DbCommand.Parameters.AddWithValue(parameterName, value == null || value.ToString() == "" ? null : value);
-        }
-
         public void AssignParam(string parameterName, object value)
         {
             DbCommand.Parameters[parameterName].Value = value == null || value.ToString() == "" ? null : value;
-        }
-
-        public void SetParameterType(string parameterName, SqlDbType dbType)
-        {
-            DbCommand.Parameters[parameterName].SqlDbType = dbType;
         }
 
         public void ClearParameters()
