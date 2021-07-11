@@ -11,6 +11,11 @@ public static class ExtraTools
         return value ? trueValue : falseValue;
     }
 
+    public static string IsFalse(this bool value, string trueValue, string falseValue = "")
+    {
+        return !value ? trueValue : falseValue;
+    }
+
     public static bool In<T>(this T item, params T[] items)
     {
         if (items == null) return false;

@@ -20,6 +20,7 @@ namespace NeelabhMVCTools.Utilities
         public string Message { get; set; }
     }
 
+
     public class ModelErrorItems
     {
         public List<ModelError> Errors = null;
@@ -28,6 +29,17 @@ namespace NeelabhMVCTools.Utilities
     public interface IModelErrorIntegration
     {
         public ModelErrorItems ModelErrors();
+    }
+
+    public class VMBase
+    {
+        public bool IsPostBack { get; set; }
+
+        public string EncId { get; set; }
+
+        public string UserKey { get; set; }
+
+        public string ModelErrorMsg { get; set; }
     }
 
 }

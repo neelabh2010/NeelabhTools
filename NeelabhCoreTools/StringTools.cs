@@ -4,74 +4,6 @@ using System.Text.RegularExpressions;
 
 public static class StringTools
 {
-    public static bool IsInt(this string value)
-    {
-        return int.TryParse(value, out _);
-    }
-
-    public static bool IsFloat(this string value)
-    {
-        return float.TryParse(value, out _);
-    }
-
-    public static bool IsDecimal(this string value)
-    {
-        return decimal.TryParse(value, out _);
-    }
-
-    public static bool IsDouble(this string value)
-    {
-        return double.TryParse(value, out _);
-    }
-    
-    public static bool IsBool(this string value)
-    {
-        return bool.TryParse(value, out _);
-    }
-
-    public static bool IsDate(this string value)
-    {
-        return DateTime.TryParse(value, out _);
-    }
-
-    public static bool IsValidEmail(this string email)
-    {
-        Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
-        if (regex.Match(email).Success) return true;
-        return false;
-    }
-
-    public static bool IsValid10DigitsMobile(this string mobile)
-    {
-        if (mobile == null) return false;
-        if (mobile.Length != 10) return false;
-        if (mobile.StartsWith("0")) return false;
-        if (!ulong.TryParse(mobile, out _)) return false;
-        return true;
-    }
-
-    public static bool IsNullOrEmpty(this string value)
-    {
-        return value == null || value == string.Empty;
-    }
-
-    public static bool IsNotNullOrEmpty(this string value)
-    {
-        return !(value == null || value == string.Empty);
-    }
-
-    public static int CountOccurrance(this string target, string searchString)
-    {
-        return Regex.Matches(target, searchString).Count;
-    }
-
-    public static string ReplaceOccurrance(this string target, string replaceTo, string replaceWith, int occurrance = 1)
-    {
-        var regex = new Regex(Regex.Escape(replaceTo));
-        var newText = regex.Replace(target, replaceWith, occurrance);
-        return newText;
-    }
-
     public static string TrimStart(this string target, string trimString = " ")
     {
         if (string.IsNullOrEmpty(trimString)) return target;
@@ -97,6 +29,29 @@ public static class StringTools
 
         return result;
     }
+
+    public static string ReplaceIF(this string target, string compareWith, string trueValue)
+    {
+        return target.ToString() == compareWith ? trueValue : target.ToString();
+    }
+
+    public static string ReplaceIF(this string target, string compareWith, string trueValue, string falseValue)
+    {
+        return target.ToString() == compareWith ? trueValue : falseValue;
+    }
+
+    public static string ReplaceOccurrance(this string target, string replaceTo, string replaceWith, int occurrance = 1)
+    {
+        var regex = new Regex(Regex.Escape(replaceTo));
+        var newText = regex.Replace(target, replaceWith, occurrance);
+        return newText;
+    }
+
+    public static int CountOccurrance(this string target, string searchString)
+    {
+        return Regex.Matches(target, searchString).Count;
+    }
+
 
     public static string[] Split(this string target, string splitBy = "##", StringSplitOptions splitOption = StringSplitOptions.RemoveEmptyEntries)
     {
