@@ -94,7 +94,6 @@ public static class TypeCheckTools
         return target.ToString() != string.Empty ? trueValue : falseValue;
     }
 
-
     public static bool IsNullOrEmpty(this string value)
     {
         return value == null || value == string.Empty;
@@ -103,6 +102,16 @@ public static class TypeCheckTools
     public static bool IsNotNullOrEmpty(this string value)
     {
         return !(value == null || value == string.Empty);
+    }
+
+    public static bool IsNullOrEmpty(this object value)
+    {
+        return value == null || value.ToString() == string.Empty;
+    }
+
+    public static bool IsNotNullOrEmpty(this object value)
+    {
+        return !(value == null || value.ToString() == string.Empty);
     }
 
     public static bool IsEqual(this object target, string compareWith)
@@ -123,7 +132,6 @@ public static class TypeCheckTools
     {
         return target.ToString() != compareWith ? trueValue : falseValue;
     }
-
         
     public static bool IsValidEmail(this string email)
     {
