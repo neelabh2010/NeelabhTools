@@ -13,6 +13,7 @@ public class ResultInfo
     public List<string> AdditionalItems { get; set; }
     public DataTable Table { get; set; }
     public object Object { get; set; }
+    public dynamic Data { get; set; }
 
     // Error Related --
     public bool HasError { get; set; }  = false;
