@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Net.Mail;
+﻿using System.Net.Mail;
 
 namespace NeelabhMVCTools.EmailServices
 {
@@ -9,16 +8,12 @@ namespace NeelabhMVCTools.EmailServices
         public void SetSMTPHost(string smtpHost);
         public void SetSMTPPort(int smtpPort);
         public void SetPriority(MailPriority mailPriority);
-        public void ClearReplyToAddressList();
+        public void ResetReplyToAddressList();
         public void AddReplyToAddressList(string email);
-        public void ClearCCToAddressList();
+        public void ResetCCToAddressList();
         public void AddCCToAddressList(string email);
-        public void ClearBCCToAddressList();
+        public void ResetBCCToAddressList();
         public void AddBCCToAddressList(string email);
-
-
-
-
         public ResultInfo SendEmail(string ReceiverEmail, string Subject, string HtmlMessage, string SenderName = "Support Team", string ReceiverName = "Member");
     }
 }

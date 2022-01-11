@@ -78,37 +78,39 @@ namespace NeelabhMVCTools.EmailServices
         }
 
 
-        public void ClearReplyToAddressList()
+        public void ResetReplyToAddressList()
         {
-            ReplyToAddresses.Clear();
+            ReplyToAddresses = null;
         }
 
         public void AddReplyToAddressList(string email)
         {
+            ReplyToAddresses ??= new List<string>();
             ReplyToAddresses.Add(email);
         }
 
-        public void ClearCCToAddressList()
+        public void ResetCCToAddressList()
         {
-            CCToAddresses.Clear();
+            CCToAddresses = null;
         }
 
         public void AddCCToAddressList(string email)
         {
+            CCToAddresses ??= new List<string>();
             CCToAddresses.Add(email);
         }
 
-        public void ClearBCCToAddressList()
+        public void ResetBCCToAddressList()
         {
-            BCCToAddresses.Clear();
+            BCCToAddresses = null;
         }
 
         public void AddBCCToAddressList(string email)
         {
+            BCCToAddresses ??= new List<string>();
             BCCToAddresses.Add(email);
         }
       
-
         public ResultInfo SendEmail(string ReceiverEmail, string Subject, string HtmlMessage, string SenderName = "Support Team", string ReceiverName = "Member")
         {
             // Sending Email --
