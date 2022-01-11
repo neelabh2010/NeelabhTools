@@ -6,7 +6,7 @@ using System.Net.Mail;
 
 namespace NeelabhMVCTools.EmailServices
 {
-    public class EmailService : IEmailService
+    public class GmailService : IEmailService
     {
         public string SenderEmail { get; set; }
         public string SenderPassword { get; set; }
@@ -14,7 +14,7 @@ namespace NeelabhMVCTools.EmailServices
         public int SMTPPort { get; set; }
         public MailPriority Priority { get; set; }
 
-        public EmailService()
+        public GmailService()
         {
             // default setting is for Gmail server --
             SMTPHost = "smtp.gmail.com";
@@ -30,10 +30,22 @@ namespace NeelabhMVCTools.EmailServices
                 builder.AddJsonFile(Path.Combine(Directory.GetCurrentDirectory(), "appsettings.json"));
                 var root = builder.Build();
 
-                SMTPHost = root.GetSection("NT_EmailSettings").GetSection("SMTPHost").Value;
-                SMTPPort = root.GetSection("NT_EmailSettings").GetSection("SMTPPort").Value.ToInt();
-                SenderEmail = root.GetSection("NT_EmailSettings").GetSection("SenderEmail").Value;
-                SenderPassword = root.GetSection("NT_EmailSettings").GetSection("SenderPassword").Value;
+                // set below setting in the appsetttings.json file --
+
+                SMTPHost = root.GetSection("NTEmailSettings").GetSection("GmailSettings").GetSection("Smtp").Value;
+                SMTPPort = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("Port").Value.ToInt();
+                SenderEmail = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("SenderEmail").Value;
+                SenderPassword = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("SenderPassword").Value;
+
+                // example format in appsettings.json file --
+                    //"NT_EmailSettings": {
+                    //    "GmailSettings": {
+                    //        "Smtp": "smtp.gmail.com",
+                    //        "Port": "587",
+                    //        "SenderEmail": "senderemail@gmail.com",
+                    //        "SenderPassword": "passwordofsender"
+                    //    }
+                    //}
             }
             catch
             {
