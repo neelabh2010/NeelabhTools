@@ -20,6 +20,8 @@ namespace NeelabhMVCTools.EmailServices
             SMTPHost = "smtp.gmail.com";
             SMTPPort = 587;
             Priority = MailPriority.Normal;
+
+            InitSettings();
         }
 
         public bool InitSettings()
