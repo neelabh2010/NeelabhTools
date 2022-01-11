@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Configuration;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
@@ -13,6 +14,10 @@ namespace NeelabhMVCTools.EmailServices
         public string SMTPHost { get; set; }
         public int SMTPPort { get; set; }
         public MailPriority Priority { get; set; }
+
+        public List<string> CCToAddresses { get; set; }
+        public List<string> BCCToAddresses { get; set; }
+        public List<string> ReplyToAddresses { get; set; }
 
         public GmailService()
         {
@@ -72,6 +77,38 @@ namespace NeelabhMVCTools.EmailServices
             Priority = mailPriority;
         }
 
+
+        public void ClearReplyToAddressList()
+        {
+            ReplyToAddresses.Clear();
+        }
+
+        public void AddReplyToAddressList(string email)
+        {
+            ReplyToAddresses.Add(email);
+        }
+
+        public void ClearCCToAddressList()
+        {
+            CCToAddresses.Clear();
+        }
+
+        public void AddCCToAddressList(string email)
+        {
+            CCToAddresses.Add(email);
+        }
+
+        public void ClearBCCToAddressList()
+        {
+            BCCToAddresses.Clear();
+        }
+
+        public void AddBCCToAddressList(string email)
+        {
+            BCCToAddresses.Add(email);
+        }
+      
+
         public ResultInfo SendEmail(string ReceiverEmail, string Subject, string HtmlMessage, string SenderName = "Support Team", string ReceiverName = "Member")
         {
             // Sending Email --
@@ -89,6 +126,30 @@ namespace NeelabhMVCTools.EmailServices
                 mailMessage.Body = HtmlMessage;
                 mailMessage.IsBodyHtml = true;
                 mailMessage.Priority = Priority;
+
+                if (ReplyToAddresses != null)
+                {
+                    foreach(string address in ReplyToAddresses)
+                    {
+                        mailMessage.ReplyToList.Add(address);
+                    }
+                }
+
+                if (CCToAddresses != null)
+                {
+                    foreach (string address in CCToAddresses)
+                    {
+                        mailMessage.CC.Add(address);
+                    }
+                }
+
+                if (BCCToAddresses != null)
+                {
+                    foreach (string address in BCCToAddresses)
+                    {
+                        mailMessage.Bcc.Add(address);
+                    }
+                }
 
                 using (SmtpClient smtp = new SmtpClient(SMTPHost, SMTPPort))
                 {
