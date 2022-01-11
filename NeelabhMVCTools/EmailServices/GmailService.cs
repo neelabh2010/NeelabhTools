@@ -32,16 +32,16 @@ namespace NeelabhMVCTools.EmailServices
 
                 // set below setting in the appsetttings.json file --
 
-                SMTPHost = root.GetSection("NTEmailSettings").GetSection("GmailSettings").GetSection("Smtp").Value;
-                SMTPPort = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("Port").Value.ToInt();
+                SMTPHost = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("SmtpHost").Value;
+                SMTPPort = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("SmtpPort").Value.ToInt();
                 SenderEmail = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("SenderEmail").Value;
                 SenderPassword = root.GetSection("NT_EmailSettings").GetSection("GmailSettings").GetSection("SenderPassword").Value;
 
                 // example format in appsettings.json file --
                     //"NT_EmailSettings": {
                     //    "GmailSettings": {
-                    //        "Smtp": "smtp.gmail.com",
-                    //        "Port": "587",
+                    //        "SmtpHost": "smtp.gmail.com",
+                    //        "SmtpPort": "587",
                     //        "SenderEmail": "senderemail@gmail.com",
                     //        "SenderPassword": "passwordofsender"
                     //    }
