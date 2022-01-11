@@ -22,7 +22,7 @@ namespace NeelabhMVCTools.EmailServices
             Priority = MailPriority.Normal;
         }
 
-        private void SetSettings()
+        public bool InitSettings()
         {
             try
             {
@@ -49,8 +49,25 @@ namespace NeelabhMVCTools.EmailServices
             }
             catch
             {
-
+                return false;
             }
+
+            return true;
+        }
+
+        public void SetSMTPHost(string smtpHost)
+        {
+            SMTPHost = smtpHost;    
+        }
+
+        public void SetSMTPPort(int smtpPort)
+        {
+            SMTPPort = smtpPort;
+        }
+
+        public void SetPriority(MailPriority mailPriority = MailPriority.Normal)
+        {
+            Priority = mailPriority;
         }
 
         public ResultInfo SendEmail(string ReceiverEmail, string Subject, string HtmlMessage, string SenderName = "Support Team", string ReceiverName = "Member")
