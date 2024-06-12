@@ -27,6 +27,21 @@ namespace NeelabhCoreTools.SqlClient
             DbCommand.CommandType = commandType;
         }
 
+        public bool TestConnection()
+        {
+            try
+            {
+                DbConnection.Open();
+                DbConnection.Close();
+            }
+            catch
+            {
+                return false;
+            }
+
+            return true;
+        }
+
         public void Open(bool transactionHandling = false)
         {
             if (DbConnection.State != ConnectionState.Open) DbConnection.Open();

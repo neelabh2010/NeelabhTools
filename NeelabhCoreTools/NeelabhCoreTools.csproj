@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Authors>Neelabh Srivastava</Authors>
     <Description>C# Library &amp; Extension methods</Description>
     <Copyright>Neelabh Srivastava | 2021</Copyright>
@@ -12,7 +12,7 @@
     <Product>Neelabh Tools</Product>
     <PackageProjectUrl>https://github.com/neelabh2010/NeelabhTools</PackageProjectUrl>
     <RepositoryUrl>https://github.com/neelabh2010/NeelabhTools</RepositoryUrl>
-    <Version>6.0.1</Version>
+    <Version>8.0.2</Version>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -22,7 +22,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.1" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.31" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
