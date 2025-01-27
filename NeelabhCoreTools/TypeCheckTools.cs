@@ -8,6 +8,11 @@ public static class TypeCheckTools
         return int.TryParse(value, out _);
     }
 
+    public static bool IsLong(this string value)
+    {
+        return long.TryParse(value, out _);
+    }
+
     public static bool IsFloat(this string value)
     {
         return float.TryParse(value, out _);

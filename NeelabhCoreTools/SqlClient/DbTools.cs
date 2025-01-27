@@ -159,6 +159,36 @@ namespace NeelabhCoreTools.SqlClient
             return rInfo;
         }
 
+        /// <summary>
+        /// Spelling name of method is only corrected by ExecuteScalar from ExecuteScaler
+        /// </summary>
+        public ResultInfo ExecuteScalar(bool openConnection = true, bool closeConnection = true)
+        {
+            ResultInfo rInfo = new ResultInfo();
+            try
+            {
+                if (openConnection) Open();
+                object result = DbCommand.ExecuteScalar();
+                if (result == null) rInfo.Result = "";
+                else rInfo.Result = result.ToString();
+            }
+            catch (SqlException ex)
+            {
+                rInfo.SetError(ex.Message, ex.Number, true);
+            }
+            catch (Exception ex)
+            {
+                rInfo.SetError(ex.Message, 0, true);
+            }
+            finally
+            {
+                if (closeConnection) Close();
+            }
+
+            return rInfo;
+        }
+
+
         public SqlDataReader ExecuteReader()
         {
             return DbCommand.ExecuteReader();
