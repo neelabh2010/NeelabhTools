@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 
@@ -15,7 +15,7 @@ namespace NeelabhCoreTools
         // Random values generation --
         public static int RandomDigit()
         {
-            return new Random().Next(0, 9);
+            return new Random().Next(0, 10);
         }
 
         public static int RandomNumber(int minValue = int.MinValue, int MaxValue = int.MaxValue)

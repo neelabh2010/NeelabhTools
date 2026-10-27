@@ -33,9 +33,15 @@ public static class DateTools
         return new DateTime(date.Year, date.Month, DateTime.DaysInMonth(date.Year, date.Month));
     }
 
+    [Obsolete("Use IsExpired instead.")]
     public static bool HasExpired(this DateTime date)
     {
         return date > CurrentDateTime();
+    }
+
+    public static bool IsExpired(this DateTime date)
+    {
+        return date < CurrentDateTime();
     }
 
     public static string RelativeTime(this DateTime date)
