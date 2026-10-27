@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NeelabhCoreTools", "Neelabh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeelabhMVCTools", "NeelabhMVCTools\NeelabhMVCTools.csproj", "{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NeelabhCoreTools.Tests", "NeelabhCoreTools.Tests\NeelabhCoreTools.Tests.csproj", "{4A4E4EE7-FB28-491A-B5E9-210683CBFFE9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0691FC6-BAB7-4E4C-A9DC-803A06B54291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A4E4EE7-FB28-491A-B5E9-210683CBFFE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A4E4EE7-FB28-491A-B5E9-210683CBFFE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A4E4EE7-FB28-491A-B5E9-210683CBFFE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A4E4EE7-FB28-491A-B5E9-210683CBFFE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
